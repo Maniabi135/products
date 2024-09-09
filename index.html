@@ -16,13 +16,13 @@
         <div class="container">
             <nav class="navbar">
                 <div class="hamburger">
-                    <span class="material-symbols-outlined">menu</span>
+                    <span class="material-symbols-outlined" id="menuBar">menu</span>
                 </div>
                 <div class="logo">
                     <a href="#">VENIA</a>
                 </div>
-                <div class="tabs hide-menu-list-dropdown">
-                    <span class="material-symbols-outlined close-icon">close</span>
+                <div class="tabs" id="tabs">
+                    <span class="material-symbols-outlined close-icon" id="closeMenuBar">close</span>
                     <ul class="menu-list">
                         <li class="menu-item active">
                             <a href="#">Home</a>
@@ -86,9 +86,7 @@
             </aside>
             <main class="main-content">
                 <section class="top-filter-options">
-                    <div class="results-count" id="resultsCount">
-                        0 Results
-                    </div>
+                    <div class="results-count" id="resultsCount"></div>
                     <ul class="sort-options">
                         <li class="search-filter">
                             <input type="text" class="search-input" name="search-input" id="searchInput"
@@ -136,8 +134,8 @@
                                 <div class="filter-dropdown" id="filterDropdown">
                                     <ul class="filter-dropdown-list" id="categoriesDropdown">
                                     </ul>
-                                    <div class="filter-overlay"></div>
                                 </div>
+                                <div class="filter-overlay" id="filterOverlay"></div>
                             </div>
                             <div id="sortingFilter">
                                 <select id="sortByPrice">

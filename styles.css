@@ -368,6 +368,7 @@ header .navbar .cart-items .cart-count {
         top: -40px;
         width: 85%;
         margin: 0 auto;
+        padding: 20px 0;
    }
 }
 .banner-section .content-block .banner-title {
@@ -639,6 +640,7 @@ header .navbar .cart-items .cart-count {
     gap: 8px;
     padding: 0 10px;
     font-size: 16px;
+    cursor: pointer;
     border-radius: 2px;
     min-width: 100px;
     height: 36px;
@@ -716,6 +718,13 @@ header .navbar .cart-items .cart-count {
     position: absolute;
     left: 4px;
     top: -1px;
+}
+.content-block-wrapper .main-content section.top-filter-options ul.sort-options .filter-sort-wrapper .category-filter-mobile #filterOverlay {
+    display: none;
+    position: fixed;
+    background: transparent;
+    z-index: 21;
+    inset: 0;
 }
 .content-block-wrapper .main-content section.top-filter-options ul.sort-options .filter-sort-wrapper #sortingFilter {
     position: relative;
@@ -798,6 +807,7 @@ header .navbar .cart-items .cart-count {
     text-align: left;
     padding: 12px;
     background-color: #fff;
+    border: 1px solid transparent;
     transition: all 0.3s ease-in;
     width: 100%;
     cursor: pointer;
@@ -809,6 +819,7 @@ header .navbar .cart-items .cart-count {
 }
 .content-block-wrapper .main-content section.products-section ul.products-list li.product-item:hover, .content-block-wrapper .main-content section.products-section #productsList li.product-item:hover, .content-block-wrapper .main-content section.products-section ul.products-list-loader li.product-item:hover, .content-block-wrapper .main-content section.products-section #productsListLoader li.product-item:hover, .content-block-wrapper .main-content section.products-section ul.products-list .product-item-loader:hover, .content-block-wrapper .main-content section.products-section #productsList .product-item-loader:hover, .content-block-wrapper .main-content section.products-section ul.products-list-loader .product-item-loader:hover, .content-block-wrapper .main-content section.products-section #productsListLoader .product-item-loader:hover {
     box-shadow: 0 0 15px 0 rgba(59, 59, 59, 0.05);
+    border: 1px solid #f5f5f5;
 }
 .content-block-wrapper .main-content section.products-section ul.products-list li.product-item:hover .product-title, .content-block-wrapper .main-content section.products-section #productsList li.product-item:hover .product-title, .content-block-wrapper .main-content section.products-section ul.products-list-loader li.product-item:hover .product-title, .content-block-wrapper .main-content section.products-section #productsListLoader li.product-item:hover .product-title, .content-block-wrapper .main-content section.products-section ul.products-list .product-item-loader:hover .product-title, .content-block-wrapper .main-content section.products-section #productsList .product-item-loader:hover .product-title, .content-block-wrapper .main-content section.products-section ul.products-list-loader .product-item-loader:hover .product-title, .content-block-wrapper .main-content section.products-section #productsListLoader .product-item-loader:hover .product-title, .content-block-wrapper .main-content section.products-section ul.products-list li.product-item:hover .product-price, .content-block-wrapper .main-content section.products-section #productsList li.product-item:hover .product-price, .content-block-wrapper .main-content section.products-section ul.products-list-loader li.product-item:hover .product-price, .content-block-wrapper .main-content section.products-section #productsListLoader li.product-item:hover .product-price, .content-block-wrapper .main-content section.products-section ul.products-list .product-item-loader:hover .product-price, .content-block-wrapper .main-content section.products-section #productsList .product-item-loader:hover .product-price, .content-block-wrapper .main-content section.products-section ul.products-list-loader .product-item-loader:hover .product-price, .content-block-wrapper .main-content section.products-section #productsListLoader .product-item-loader:hover .product-price {
     color: #181c24;
@@ -816,6 +827,11 @@ header .navbar .cart-items .cart-count {
 .content-block-wrapper .main-content section.products-section ul.products-list li.product-item .product-img, .content-block-wrapper .main-content section.products-section #productsList li.product-item .product-img, .content-block-wrapper .main-content section.products-section ul.products-list-loader li.product-item .product-img, .content-block-wrapper .main-content section.products-section #productsListLoader li.product-item .product-img, .content-block-wrapper .main-content section.products-section ul.products-list .product-item-loader .product-img, .content-block-wrapper .main-content section.products-section #productsList .product-item-loader .product-img, .content-block-wrapper .main-content section.products-section ul.products-list-loader .product-item-loader .product-img, .content-block-wrapper .main-content section.products-section #productsListLoader .product-item-loader .product-img {
     height: 60%;
     width: 90%;
+}
+@media (max-width: 575px) {
+    .content-block-wrapper .main-content section.products-section ul.products-list li.product-item .product-img .product-img, .content-block-wrapper .main-content section.products-section #productsList li.product-item .product-img .product-img, .content-block-wrapper .main-content section.products-section ul.products-list-loader li.product-item .product-img .product-img, .content-block-wrapper .main-content section.products-section #productsListLoader li.product-item .product-img .product-img, .content-block-wrapper .main-content section.products-section ul.products-list .product-item-loader .product-img .product-img, .content-block-wrapper .main-content section.products-section #productsList .product-item-loader .product-img .product-img, .content-block-wrapper .main-content section.products-section ul.products-list-loader .product-item-loader .product-img .product-img, .content-block-wrapper .main-content section.products-section #productsListLoader .product-item-loader .product-img .product-img {
+        height: fit-content;
+   }
 }
 .content-block-wrapper .main-content section.products-section ul.products-list li.product-item .product-img.shimmer, .content-block-wrapper .main-content section.products-section #productsList li.product-item .product-img.shimmer, .content-block-wrapper .main-content section.products-section ul.products-list-loader li.product-item .product-img.shimmer, .content-block-wrapper .main-content section.products-section #productsListLoader li.product-item .product-img.shimmer, .content-block-wrapper .main-content section.products-section ul.products-list .product-item-loader .product-img.shimmer, .content-block-wrapper .main-content section.products-section #productsList .product-item-loader .product-img.shimmer, .content-block-wrapper .main-content section.products-section ul.products-list-loader .product-item-loader .product-img.shimmer, .content-block-wrapper .main-content section.products-section #productsListLoader .product-item-loader .product-img.shimmer {
     height: 200px;

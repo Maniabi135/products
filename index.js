@@ -153,19 +153,21 @@ function loadMore() {
 
 function toggleMobileCategoryDropdown() {
   const dropdown = document.getElementById("filterDropdown");
+  const dropdownOverlay = document.getElementById("filterOverlay");
+
   if (dropdown.style.display === "block") {
     dropdown.style.display = "none";
+    dropdownOverlay.style.display = "none";
   } else {
     dropdown.style.display = "block";
+    dropdownOverlay.style.display = "block";
   }
 }
 
-function handleClickOutside(event) {
-  const dropdown = document.getElementById("filterDropdown");
-  if (dropdown && !dropdown.contains(event.target)) {
-    dropdown.style.display = "none";
-    document.removeEventListener("click", handleClickOutside);
-  }
+function handleClickOutside() {
+  document.getElementById("filterDropdown").style.display = "none";
+  document.getElementById("filterOverlay").style.display = "none";
+  document.removeEventListener("click", handleClickOutside);
 }
 
 function toggleLoadMoreButton() {
@@ -175,6 +177,18 @@ function toggleLoadMoreButton() {
   } else {
     document.getElementById("loadMore").style.display = "none";
   }
+}
+
+function openMenuBar() {
+  document.body.style.overflow = "hidden";
+  document.getElementById("menuBar").innerHTML = "menu_open";
+  document.getElementById("tabs").classList.add("show-menu-list-dropdown");
+}
+
+function closeMenuBar() {
+  document.body.style.overflow = "unset";
+  document.getElementById("menuBar").innerHTML = "menu";
+  document.getElementById("tabs").classList.remove("show-menu-list-dropdown");
 }
 
 window.onload = function () {
@@ -189,4 +203,12 @@ window.onload = function () {
   document
     .getElementById("filterByCategory")
     .addEventListener("click", toggleMobileCategoryDropdown);
+  document
+    .getElementById("filterOverlay")
+    .addEventListener("click", handleClickOutside);
+
+  document.getElementById("menuBar").addEventListener("click", openMenuBar);
+  document
+    .getElementById("closeMenuBar")
+    .addEventListener("click", closeMenuBar);
 };
