@@ -59,7 +59,7 @@ header {
     background-color: #1363df;
     color: #fff;
     position: sticky;
-    z-index: 10;
+    z-index: 30;
     top: 0;
 }
 header .navbar {
