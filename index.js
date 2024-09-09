@@ -11,7 +11,7 @@ const categories = [
   { id: "women's clothing", label: "Women's Clothing" },
 ];
 
-function renderCategories(containerId) {
+function renderCategories(containerId, type="") {
   const container = document.getElementById(containerId);
   categories.forEach((category) => {
     const listItem = document.createElement("li");
@@ -19,13 +19,13 @@ function renderCategories(containerId) {
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = category.id;
+    checkbox.id = `${category.id}${type||""}`;
     checkbox.classList.add("filter-checkbox");
-    checkbox.name = "category";
+    checkbox.name = `category${type? "-mobile":""}`;
     checkbox.value = category.id;
 
     const label = document.createElement("label");
-    label.setAttribute("for", category.id);
+    label.setAttribute("for", `${category.id}${type||""}`);
     label.classList.add("filter-label");
     label.textContent = category.label;
 
@@ -36,7 +36,7 @@ function renderCategories(containerId) {
 }
 
 renderCategories("categoriesDesktop");
-renderCategories("categoriesDropdown");
+renderCategories("categoriesDropdown", "mobile");
 
 function productLoader() {
   const loaders = Array.from(
@@ -104,11 +104,13 @@ function displayProducts(products) {
   toggleLoadMoreButton();
 }
 
-function applyFilters() {
+function applyFilters(type = "") {
   filteredProducts = allProducts;
   // Filter by category
   const selectedCategories = Array.from(
-    document.querySelectorAll('input[name="category"]:checked')
+    document.querySelectorAll(
+      `input[name="category${type ? "-mobile" : ""}"]:checked`
+    )
   ).map((cb) => cb.value);
   if (selectedCategories.length > 0) {
     filteredProducts = filteredProducts.filter((product) =>
@@ -196,6 +198,11 @@ window.onload = function () {
   document.querySelectorAll('input[name="category"]').forEach((checkbox) => {
     checkbox.addEventListener("change", applyFilters);
   });
+  document
+    .querySelectorAll('input[name="category-mobile"]')
+    .forEach((checkbox) => {
+      checkbox.addEventListener("change", () => applyFilters("mobile"));
+    });
   document
     .getElementById("sortByPrice")
     .addEventListener("change", applyFilters);
