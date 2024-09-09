@@ -196,7 +196,7 @@ function closeMenuBar() {
 window.onload = function () {
   fetchProducts();
   document.querySelectorAll('input[name="category"]').forEach((checkbox) => {
-    checkbox.addEventListener("change", applyFilters);
+    checkbox.addEventListener("change", () => applyFilters());
   });
   document
     .querySelectorAll('input[name="category-mobile"]')
@@ -205,7 +205,7 @@ window.onload = function () {
     });
   document
     .getElementById("sortByPrice")
-    .addEventListener("change", applyFilters);
+    .addEventListener("change", () => applyFilters());
   document.getElementById("loadMore").addEventListener("click", loadMore);
   document
     .getElementById("filterByCategory")
